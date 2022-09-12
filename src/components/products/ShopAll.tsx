@@ -6,7 +6,7 @@ export default function ShopAll() {
         <div className='shop-all'>
             <div className='line'></div>
             <div className="btn-container">
-                <Button className='shop-all-btn' href='/allProducts'>
+                <Button className='shop-all-btn' href='products/allProducts'>
                     Shop All Products
                     </Button>
             </div>

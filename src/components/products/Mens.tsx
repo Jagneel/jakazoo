@@ -1,6 +1,9 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
+import CollectionList from './CollectionList'
 import Product from './Product'
+import ProductWithSize from './ProductWithSize'
+import SelectSize from './SelectSize'
 
 export default function Mens(props: mensProps) {
     const mensProducts = []
@@ -10,26 +13,31 @@ export default function Mens(props: mensProps) {
             mensProducts.push(props.products[i])
         }
     }
-
     return (
-        <div>
+        <section className='sub-products'>
+            <Row className='align-items-center '>
+                <Col xs={12} md={6} xl={7} >
+                    <div className="sub-products-heading">
+                        <h2>Mens</h2>
+                        <div className="heading-line"></div>
+                    </div>
+                </Col>
+            </Row>
             <Row className='align-items-center'>
-                <div className="sub-heading">
-                    <h3>Mens</h3>
-                </div>
-
-                <Col xs={12} md={8} xl={8} className='all-products-display'>
+                <Col className='all-products-display'>
                     {mensProducts.map((product: { id: number, title: string, image: string, price: number }) =>
-                        <Product
+                        <ProductWithSize
                             id={product.id}
                             title={product.title}
                             image={product.image}
                             price={product.price}
                         />
                     )}
+
+
                 </Col>
             </Row>
-        </div>
+        </section>
     )
 }
 

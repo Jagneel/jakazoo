@@ -1,5 +1,6 @@
 import React from 'react'
-import { Col } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
+import CollectionList from './CollectionList'
 import Product from './Product'
 
 export default function Jewellery(props: jewelleryProps) {
@@ -12,21 +13,28 @@ export default function Jewellery(props: jewelleryProps) {
     }
 
     return (
-        <div>
-            <Col xs={12} md={8} xl={8} className='all-products-display'>
-                <div className="sub-heading">
-                    <h3>Jewrely</h3>
-                </div>
-                {jewelleryProducts.map((product: { id: number, title: string, image: string, price: number }) =>
-                    <Product
-                        id={product.id}
-                        title={product.title}
-                        image={product.image}
-                        price={product.price}
-                    />
-                )}
-            </Col>
-        </div>
+        <section>
+            <Row className='align-items-center'>
+                <Col xs={12} md={6} xl={7} >
+                    <div className="sub-products-heading">
+                        <h2>Jewerely</h2>
+                        <div className="heading-line"></div>
+                    </div>
+                </Col>
+            </Row>
+            <Row className='align-items-center'>
+                <Col className='all-products-display'>
+                    {jewelleryProducts.map((product: { id: number, title: string, image: string, price: number }) =>
+                        <Product
+                            id={product.id}
+                            title={product.title}
+                            image={product.image}
+                            price={product.price}
+                        />
+                    )}
+                </Col>
+            </Row>
+        </section>
     )
 }
 

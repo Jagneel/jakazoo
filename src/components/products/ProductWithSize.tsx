@@ -1,9 +1,10 @@
 import React from 'react'
 import { Button, Card } from 'react-bootstrap'
+import SelectSize from './SelectSize'
 
 export default function Product(props: propsProduct) {
     return (
-        <div className='product-card'>
+        <div>
             <Card className='image-display'>
                 <div className="img-container">
                     <Card.Img className='card-img' src={props.image} />
@@ -15,6 +16,7 @@ export default function Product(props: propsProduct) {
                     <Card.Text className='card-price'>
                         £{props.price}
                     </Card.Text>
+                    <SelectSize />
                     <Button className='cart-btn'>Add To Cart</Button>
                 </Card.Body>
             </Card>

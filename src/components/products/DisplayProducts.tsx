@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Card, Col, Row } from 'react-bootstrap'
-import useFetch from '../../api/api'
 
-export default function Products(props: propsProducts) {
+export default function DisplayProducts(props: propsProducts) {
 
     console.log(props.products)
 

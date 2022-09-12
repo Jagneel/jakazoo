@@ -33,10 +33,13 @@ export default function NavBar() {
                 </Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="/allProducts" className={activeLink === 'allProducts' ? 'active-navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('allProducts')}>Shop</Nav.Link>
-                        <Nav.Link href="#about" className={activeLink === 'about' ? 'active-navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('about')}>About</Nav.Link>
+                        <Nav.Link href="/products/AllProducts" className={activeLink === 'allProducts' ? 'active-navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('allProducts')}>Shop</Nav.Link>
+                        <Nav.Link href="/#about" className={activeLink === 'about' ? 'active-navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('about')}>About</Nav.Link>
                         <Nav.Link href="#contact" className={activeLink === 'contact' ? 'active-navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('contact')}>Contact</Nav.Link>
-                        <Nav.Link href="#cart" className={activeLink === 'cart' ? 'active-navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('cart')}>Cart</Nav.Link>
+                        <div className="cart">
+                            <Nav.Link href="#cart" className={activeLink === 'cart' ? 'active-navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('cart')}>Cart</Nav.Link>
+                            <span>0</span>
+                        </div>
                     </Nav>
                     <span className="navbar-text">
                         <div className="social-icon">

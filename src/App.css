@@ -239,6 +239,27 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-family: 'GrapeDays';
 }
 
+.cart span:nth-child(1) {
+  font-size: 4rem;
+  color: white;
+}
+
+.cart span:nth-child(2) {
+  background-color: red;
+  color: white;
+  font-family: 'LemonLove';
+  font-weight: bold;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  text-align: center;
+  top: -25%;
+  left: 75%
+}
+
+
 /* Banner ------------------------------------------------------------------------------------------- */
 
 .banner {
@@ -322,7 +343,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .display-card {
   margin: 0 15px 0 15px;
-  min-height: 600px;
+  /* min-height: 10px; */
   border: none !important;
   align-items: center;
   background: transparent !important;
@@ -353,31 +374,28 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .card-img {
   width: 250px !important;
-  height: auto !important;
+  max-height: 350px !important;
 }
 
-.product-card {
-  max-height: 600px;
+
+.image-container {
+  text-align: center;
 }
 
 
 .card-title {
-  min-height: 80px;
+  min-height: 100px;
   font-family: 'GrapeDays';
-}
-
-.card-body {
-  max-height: 200px;
-}
-
-.display-card {
-  max-height: 200px;
 }
 
 .card-price {
   font-family: 'LemonLove';
   font-size: 20px;
   align-self: c;
+}
+
+.select-size {
+  padding-bottom: 15px;
 }
 
 
@@ -442,7 +460,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   height: 5px;
   width: 100%;
   background-color: pink;
-  ;
 }
 
 /* All Products */
@@ -467,8 +484,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000;
 }
 
+.product-display {
+  display: flex;
+  padding-top: 30px
+}
+
 .collection-list {
-  float: right;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .collection-list h3 {
@@ -476,6 +499,27 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-size: 40px;
   color: #ffc0cb;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000;
+}
+
+.collection-list-inactive {
+  font-family: 'GrapeDays';
+  font-size: 20px;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.collection-list-active {
+  font-family: 'GrapeDays';
+  font-size: 20px;
+  color: #ffc0cb;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000;
+}
+
+.product-list {
+  display: flex;
+  margin-left: 150px;
+  /* flex-wrap: wrap;
+  justify-content: flex-end; */
 
 }
 
@@ -483,4 +527,32 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+}
+
+/* Sub Products */
+
+.sub-products-heading {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  font-family: 'GrapeDays';
+  font-size: 30px;
+  color: #ffc0cb;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000;
+}
+
+.heading-line {
+  height: 5px;
+  margin-left: 10px;
+  width: 100%;
+  background-color: pink;
+}
+
+/* About */
+
+.about {
+  margin-top: 200px;
+  /* display: flex;
+  justify-content: center; */
+  text-align: center;
 }
