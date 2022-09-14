@@ -1,0 +1,113 @@
+.cart {
+    margin-top: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart-heading {
+    font-family: 'GrapeDays';
+    font-size: 100px;
+    color: pink;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000;
+}
+
+.shopping-cart {
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+
+.cart-product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    min-width: 400px;
+    max-width: 400px;
+    min-height: 290px;
+    max-height: 290px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-image {
+    position: relative;
+    width: 40%;
+}
+
+.item-quantity {
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.cart-quantity {
+    font-size: large;
+    font-family: 'LemonLove';
+    padding: 8px
+}
+
+.a-r-btn {
+    background-color: grey;
+    border: black;
+}
+
+.cart-total {
+    width: 100%;
+    text-align: center;
+    font-family: 'LemonLove';
+    font-size: 80px;
+}
+
+.cart-cta {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+    padding-bottom: 100px;
+}
+
+.btn-cta {
+    font-family: 'GrapeDays' !important;
+    padding: 10px 20px 10px 20px !important;
+    font-weight: 700;
+    color: #282c34 !important;
+    background-color: white !important;
+    border-color: #282c34 !important;
+    border-width: medium;
+    border-radius: 25px !important;
+    font-size: 20px !important;
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+}
+
+
+.btn-cta:hover {
+    background-color: #282c34 !important;
+    color: white !important;
+}
+
+.cart-empty {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: beige;
+    border-radius: 25px;
+    padding: 50px;
+}
+
+.cart-empty h3 {
+    font-family: 'LemonLove';
+    color: #ffc0cb;
+    font-size: 60px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000;
+}

@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import { commerce } from '../lib/commerce'
 
-export default function useFetch(url: string) {
+export default function useFetch() {
     const [data, setData] = useState<any>([]);
 
+    const fetchProducts = async () => {
+        const { data } = await commerce.products.list();
+        setData(data)
+    }
+
     useEffect(() => {
-        axios.get(url)
-            .then((response) => {
-                setData(response.data)
-            }).catch((error) => {
-                console.log(error)
-            })
-    }, [url])
+        fetchProducts()
+    }, [])
 
     return data
 

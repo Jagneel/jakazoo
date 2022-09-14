@@ -1,0 +1,73 @@
+.product-page {
+    margin-top: 90px;
+}
+
+.product-heading {
+    display: flex !important;
+    justify-content: center !important;
+    padding: 40px;
+}
+
+.product-heading h3 {
+    font-size: 40px;
+    font-family: 'GrapeDays';
+    color: #ffc0cb;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000;
+}
+
+.product-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.card-image {
+    width: auto;
+    height: 180px;
+    padding-top: 10px;
+}
+
+/* Product Navbar */
+
+.product-nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end !important;
+    min-width: 100% !important;
+    /* background-color: red; */
+}
+
+.product-nav-heading {
+    font-family: 'LemonLove';
+    color: #ffc0cb;
+    font-size: 40px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000;
+}
+
+.product-nav-links {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+}
+
+.product-nav-link {
+    font-family: 'GrapeDays';
+    color: white !important;
+    font-size: 40px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000;
+}
+
+.product-nav-link:hover {
+    color: #ffc0cb !important;
+    font-size: 31px !important;
+}

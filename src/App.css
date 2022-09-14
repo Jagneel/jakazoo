@@ -43,208 +43,87 @@ body {
   margin-right: 50px !important;
 }
 
-a {
-  text-decoration: none !important;
+#logo:hover {
+  color: white !important;
+  font-size: 62px;
 }
 
-.nav-items {
-  align-content: center;
-  margin: auto;
-}
-
-nav.navbar {
-  padding: 18px 0;
+.nav-bar {
+  min-width: 100% !important;
+  padding-top: 100px;
   position: fixed;
-  width: 100%;
-  top: 0;
   z-index: 9999;
-  transition: 0.32 ease-in-out;
 }
 
-nav.navbar.scrolled {
-  padding: 0px 0;
-  background-color: white;
-  transition: background-color 250ms linear !important;
-
+.nav-link {
+  font-family: 'GrapeDays';
+  font-size: 30px !important;
+  margin-left: 50px;
+  color: #ffc0cb !important;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000;
 }
 
-nav.navbar.scrolled>.navbar-link {
+.nav-link:hover {
+  font-size: 31px !important;
   color: white !important;
 }
 
-nav.navbar a.navbar-brand {
-  width: 1%;
+.nav-link-list {
+  padding-top: 15px;
+  align-items: center !important;
 }
 
-nav.navbar .navbar-nav .nav-link.navbar-link {
-  font-family: 'GrapeDays';
-  color: white;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000;
-  letter-spacing: 0.8px;
-  padding: 0 25px;
-  font-size: 25px;
-  opacity: 0.9;
-  margin-left: 20px;
-
-}
-
-nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
-nav.navbar .navbar-nav a.nav-link.navbar-link.active {
-  opacity: 1;
-}
-
-span.navbar-text {
-  display: flex;
-  align-items: center;
-}
-
-.social-icon {
-  display: inline-block;
-  margin-left: 14px;
-  margin-top: 20px;
-}
-
-.social-icon a {
-  width: 42px;
-  height: 42px;
-  background: #282c34;
-  display: inline-flex;
-  border-radius: 50%;
-  margin-right: 6px;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-}
-
-.social-icon a::before {
-  content: "";
-  width: 42px;
-  height: 42px;
-  position: absolute;
-  background-color: #ffffff;
-  border-radius: 50%;
-  transform: scale(0);
-  transition: 0.3s ease-in-out;
-}
-
-.social-icon a:hover::before {
-  transform: scale(1);
-}
-
-.social-icon a img {
-  width: 40%;
-  z-index: 1;
-  transition: 0.3s ease-in-out;
-}
-
-.social-icon a:hover img {
-  filter: brightness(0) saturate(100%) invert(93%) sepia(32%) saturate(6749%) hue-rotate(288deg) brightness(109%) contrast(104%);
-}
-
-.navbar-text button {
-  font-weight: 700;
-  color: #fff;
-  border: 1px solid #fff;
-  padding: 18px 34px;
-  font-size: 18px;
-  margin-left: 18px;
-  position: relative;
-  background-color: transparent;
-  transition: 0.3s ease-in-out;
-}
-
-.navbar-text button span {
-  z-index: 1;
-}
-
-.navbar-text button::before {
-  content: "";
-  width: 0%;
-  height: 100%;
-  position: absolute;
-  background-color: #fff;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  transition: 0.3s ease-in-out;
-}
-
-.navbar-text button:hover {}
-
-.navbar-text button:hover::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-
-nav.navbar .navbar-toggler:active,
-nav.navbar .navbar-toggler:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-nav.navbar .navbar-toggler-icon {
-  width: 24px;
-  height: 17px;
-  background-image: none;
-  position: relative;
-  border-bottom: 2px solid pink;
-  transition: all 300ms linear;
-  top: -2px;
-}
-
-nav.navbar .navbar-toggler-icon:focus {
-  border-bottom: 2px solid #fff;
+.navbar-toggler {
+  color: #ffc0cb !important;
+  /* background-color: pink !important; */
+  margin-right: 40px !important;
 }
 
 nav.navbar .navbar-toggler-icon:after,
 nav.navbar .navbar-toggler-icon:before {
-  width: 24px;
-  position: absolute;
-  height: 2px;
   background-color: pink;
-  top: 0;
-  left: 0;
-  content: '';
-  z-index: 2;
-  transition: all 300ms linear;
 }
 
-nav.navbar .navbar-toggler-icon:after {
-  top: 8px;
+
+.scrolled {
+  min-width: 100% !important;
+  position: fixed !important;
+  padding-top: 100px;
+  background-color: white;
+  transition: background-color 250ms linear !important;
+  z-index: 9999;
+
 }
 
-nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
-  transform: rotate(45deg);
-  background-color: pink;
-  height: 2px;
-}
 
-nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
-  transform: translateY(8px) rotate(-45deg);
-  background-color: pink;
-  height: 2px;
-}
-
-nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-  border-color: transparent;
-}
-
-.active-navbar-link {
-  color: #ffc0cb !important;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000;
-
-  font-size: 30px !important;
-  font-family: 'GrapeDays';
-}
-
-.cart span:nth-child(1) {
+.nav-total-toggle span:nth-child(1) {
   font-size: 4rem;
   color: white;
 }
 
-.cart span:nth-child(2) {
+.nav-total-toggle:nth-child(2) {
+  background-color: red;
+  position: absolute !important;
+  color: white;
+  font-family: 'LemonLove';
+  font-weight: bold;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  text-align: center;
+  top: 85%;
+  left: 21%;
+
+}
+
+.nav-total span:nth-child(1) {
+  font-size: 4rem;
+  color: white;
+}
+
+.nav-total:nth-child(2) {
   background-color: red;
   color: white;
   font-family: 'LemonLove';
@@ -255,9 +134,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 23px;
   height: 23px;
   text-align: center;
-  top: -25%;
-  left: 75%
+  top: -32%;
+  left: 86%
 }
+
 
 
 /* Banner ------------------------------------------------------------------------------------------- */
@@ -314,112 +194,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: white !important;
 }
 
-/* Products */
-
-#productsDisplay {
-  background: rgb(220, 219, 236);
-  background: linear-gradient(90deg, rgba(220, 219, 236, 1) 0%, rgba(242, 242, 242, 1) 35%, rgba(206, 239, 246, 1) 100%);
-  height: 800px !important;
-}
-
-.sub-heading h3 {
-  align-items: center !important;
-  text-align: center;
-  font-family: 'GrapeDays';
-  padding-top: 50px;
-  color: pink;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000;
-
-}
-
-.products-display {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  margin-top: 50px !important;
-
-}
-
-.display-card {
-  margin: 0 15px 0 15px;
-  /* min-height: 10px; */
-  border: none !important;
-  align-items: center;
-  background: transparent !important;
-}
-
-.img-container {
-  padding: 30px;
-  min-height: 430px;
-  border: solid #282c34 thin;
-  border-radius: 20px;
-  mix-blend-mode: multiply;
-  align-items: center;
-  justify-content: center;
-
-}
-
-.image-display {
-  margin: 10px;
-  background: transparent !important;
-  border: none !important;
-  transition: 1000ms;
-
-}
-
-.image-display:hover {
-  background: linear-gradient(90deg, rgba(206, 239, 246, 1) 0%, rgba(242, 242, 242, 1) 35%, rgba(220, 219, 236, 1) 100%) !important;
-}
-
-.card-img {
-  width: 250px !important;
-  max-height: 350px !important;
-}
-
-
-.image-container {
-  text-align: center;
-}
-
-
-.card-title {
-  min-height: 100px;
-  font-family: 'GrapeDays';
-}
-
-.card-price {
-  font-family: 'LemonLove';
-  font-size: 20px;
-  align-self: c;
-}
-
-.select-size {
-  padding-bottom: 15px;
-}
-
-
-.cart-btn {
-  font-family: 'GrapeDays' !important;
-  padding: 5px 10px 5px 10px !important;
-  font-weight: 700;
-  color: #282c34 !important;
-  background-color: white !important;
-  border-color: #282c34 !important;
-  border-width: thick;
-  border-radius: 25px !important;
-  font-size: 15px !important;
-  letter-spacing: 0.8px;
-  display: flex;
-  align-items: center;
-  padding: 10px;
-}
-
-.cart-btn:hover {
-  background-color: #282c34 !important;
-  color: white !important;
-}
-
 /* Shop All */
 
 .shop-all {
@@ -458,92 +232,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
   top: 62px;
   height: 5px;
-  width: 100%;
-  background-color: pink;
-}
-
-/* All Products */
-
-.all-products {
-  margin-top: 160px;
-}
-
-.all-products-heading {
-  margin: auto !important;
-  background-color: #c1ecf8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.all-products-heading h2 {
-  font-family: 'LemonLove';
-  text-align: center;
-  font-size: 50px;
-  color: #ffc0cb;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000;
-}
-
-.product-display {
-  display: flex;
-  padding-top: 30px
-}
-
-.collection-list {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.collection-list h3 {
-  font-family: 'GrapeDays';
-  font-size: 40px;
-  color: #ffc0cb;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000;
-}
-
-.collection-list-inactive {
-  font-family: 'GrapeDays';
-  font-size: 20px;
-  color: white;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-
-.collection-list-active {
-  font-family: 'GrapeDays';
-  font-size: 20px;
-  color: #ffc0cb;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000;
-}
-
-.product-list {
-  display: flex;
-  margin-left: 150px;
-  /* flex-wrap: wrap;
-  justify-content: flex-end; */
-
-}
-
-.all-products-display {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-/* Sub Products */
-
-.sub-products-heading {
-  display: flex;
-  align-items: center;
-  margin-top: 50px;
-  font-family: 'GrapeDays';
-  font-size: 30px;
-  color: #ffc0cb;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000;
-}
-
-.heading-line {
-  height: 5px;
-  margin-left: 10px;
   width: 100%;
   background-color: pink;
 }

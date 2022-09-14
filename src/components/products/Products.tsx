@@ -1,33 +1,34 @@
-import React, { useState } from 'react'
-import { Col, Row } from 'react-bootstrap'
-import { Outlet, useParams } from 'react-router'
-import CollectionList from './CollectionList'
+import React from 'react'
+import { Col, Container, Row } from 'react-bootstrap'
+import { Outlet } from 'react-router';
+import ProductNav from '../nav/ProductNav';
+import BigCats from './categories/BigCats';
+import Ungulates from './categories/Ungulates';
+import Product from './Product/Product';
+import './products.css';
 
-export default function Products(props: allProductsProps) {
-
+export default function Products(props: propsProducts) {
     return (
-        <section className='all-products' id='allProducts'>
-            <Row className='align-items-center all-products-heading'>
-                <Col>
-                    <h2>All Products</h2>
+        <Container className='product-page'>
+            <Row >
+                <Col className='product-heading'>
+                    <h3>Our Animal Range</h3>
                 </Col>
             </Row>
-            <Row className='product-display'>
-                <Col xs={12} md={3} xl={2} className='collection-list'>
-                    <div className="collection-list-total">
-                        <CollectionList />
-                    </div>
+            <Row>
+                <Col lg={3}>
+                    <ProductNav />
                 </Col>
-                <Col xs={12} md={9} xl={9} className='product-list'>
-                    <div className="product-list-total">
-                        <Outlet />
-                    </div>
+                <Col className='product-display'>
+                    <Outlet />
+
                 </Col>
             </Row>
-        </section>
+        </Container>
     )
 }
 
-interface allProductsProps {
+interface propsProducts {
     products: any[];
+    onAddToCart: (productId: string, quantity: number) => any
 }
