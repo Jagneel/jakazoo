@@ -6,13 +6,13 @@ export default function Product(props: propsProduct) {
   return (
     <Card className='card-product'>
       <Card.Img className='card-image' src={props.image} />
-      <Card.Body>
-        <Card.Title>{props.name}</Card.Title>
+      <Card.Body className='card-body'>
+        <Card.Title className='card-title'>{props.name}</Card.Title>
         {/* <Card.Text dangerouslySetInnerHTML={{ __html: props.description }} /> */}
-        <Card.Text>
+        <Card.Text className='card-price'>
           {props.price}
         </Card.Text>
-        <Button variant="primary" onClick={() => props.onAddToCart(props.id, 1)}>Add To Cart</Button>
+        <Button className='card-btn' variant="primary" onClick={() => props.onAddToCart(props.id, 1)}>Add To Cart</Button>
       </Card.Body>
     </Card>
   )

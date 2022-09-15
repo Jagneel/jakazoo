@@ -1,10 +1,15 @@
 import React from 'react'
-import { Col } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 import Product from '../Product/Product'
+import BigCats from './BigCats'
 
 export default function AllAnimals(props: propsAllAnimals) {
     return (
         <>
+            <Row className='product-category-heading'>
+                <h2>All Animals</h2>
+                <hr></hr>
+            </Row>
             {props.products.map((product => (
                 <Col key={product.id} xs={12} s={6} md={4} lg={4}>
                     <Product

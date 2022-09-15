@@ -6,9 +6,9 @@ export default function Banner() {
         <section className='banner' id='home'>
             <Row className='align-items-center'>
                 <Col xs={12} md={6} xl={7}>
-                    <h1 className="banner-heading">Feeling Generous?</h1>
-                    <h2>Discover our gifts that match any moment</h2>
-                    <Button type='button' className='shop-now-btn'>Shop Now</Button>
+                    <h1 className="banner-heading">Feeling Wild?</h1>
+                    <h2>Explore our exotic collection ready for your adoption!</h2>
+                    <Button href='/products/all-animals' type='button' className='shop-now-btn'>See Animals</Button>
                 </Col>
             </Row>
         </section>

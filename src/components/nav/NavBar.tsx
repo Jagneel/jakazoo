@@ -31,8 +31,8 @@ export default function NavBar(props: navBarProps) {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className='nav-link-list'>
                     <Nav className="me-auto">
-                        <Nav.Link href="/products" className='nav-link'>Animals</Nav.Link>
-                        <Nav.Link href="#link" className='nav-link'>About</Nav.Link>
+                        <Nav.Link href="/products/all-animals" className='nav-link'>Animals</Nav.Link>
+                        <Nav.Link href="/about" className='nav-link'>About</Nav.Link>
                         <div className="nav-cart">
                             <Nav.Link href="/cart" className='nav-link'>Cart</Nav.Link>
                             <span className='nav-total'>{props.totalItems}</span>

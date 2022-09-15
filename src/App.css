@@ -145,7 +145,7 @@ nav.navbar .navbar-toggler-icon:before {
 .banner {
   padding-top: 200px;
   height: 80vh;
-  background-image: url('https://images.unsplash.com/photo-1561715276-a2d087060f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3570&q=80');
+  background-image: url('https://images.unsplash.com/photo-1516528387618-afa90b13e000?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -190,8 +190,34 @@ nav.navbar .navbar-toggler-icon:before {
 
 
 .shop-now-btn:hover {
-  background-color: #282c34 !important;
+  background-color: pink !important;
   color: white !important;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 0.5px 1px 0 #000;
+
+}
+
+/* Displayed Products on Hom */
+
+.display-products-heading {
+  text-align: center !important;
+  font-family: 'GrapeDays';
+  padding-top: 60px;
+  margin: 60px;
+}
+
+.display-products-heading h2 {
+  font-size: 60px;
+  color: #ffc0cb !important;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000;
+}
+
+
+.display-products {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center;
+  background-color: #fcf7f8;
+  padding-top: 50px;
 }
 
 /* Shop All */
@@ -215,7 +241,7 @@ nav.navbar .navbar-toggler-icon:before {
   background-color: white !important;
   border-color: #282c34 !important;
   border-width: thick;
-  border-radius: 25px !important;
+  border-radius: 45px !important;
   font-size: 25px !important;
   letter-spacing: 0.8px;
   display: flex;
@@ -224,8 +250,9 @@ nav.navbar .navbar-toggler-icon:before {
 }
 
 .shop-all-btn:hover {
-  background-color: #282c34 !important;
+  background-color: pink !important;
   color: white !important;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 0.5px 1px 0 #000;
 }
 
 .line {

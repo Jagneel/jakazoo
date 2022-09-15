@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 import Product from '../Product/Product'
 
 export default function BigCats(props: propsBigCats) {
@@ -12,6 +12,10 @@ export default function BigCats(props: propsBigCats) {
     }
     return (
         <>
+            <Row className='product-category-heading'>
+                <h2>Big Cats</h2>
+                <hr></hr>
+            </Row>
             {bigCats.map((product => (
                 <Col key={product.id} xs={12} s={6} md={4} lg={4}>
                     <Product

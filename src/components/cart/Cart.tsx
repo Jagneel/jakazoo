@@ -39,7 +39,7 @@ export default function Cart(props: propsCart) {
             <Row className='cart-cta'>
                 <Col className='cart-cta'>
                     <Button className='btn-cta' onClick={props.handleEmptyCart}>Empty Cart</Button>
-                    <Button className='btn-cta'>Checkout</Button>
+                    <Button href='/checkout' className='btn-cta'>Checkout</Button>
                 </Col>
             </Row>
         </Col>

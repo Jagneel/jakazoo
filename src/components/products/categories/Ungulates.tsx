@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import Product from '../Product/Product';
 
 export default function Ungulates(props: propsUngulates) {
@@ -13,6 +13,10 @@ export default function Ungulates(props: propsUngulates) {
 
     return (
         <>
+            <Row className='product-category-heading'>
+                <h2>Ungulates</h2>
+                <hr></hr>
+            </Row>
             {ungulates.map((product => (
                 <Col key={product.id} xs={12} s={6} md={4} lg={4}>
                     <Product

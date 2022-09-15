@@ -12,6 +12,7 @@ import BigCats from './components/products/categories/BigCats';
 import Ungulates from './components/products/categories/Ungulates';
 import Bears from './components/products/categories/Bears';
 import AllAnimals from './components/products/categories/AllAnimals';
+import Checkout from './components/checkout/Checkout';
 
 interface cart {
   id: string;
@@ -90,7 +91,7 @@ function App() {
     <div className='App'>
       <NavBar totalItems={cart.total_items} />
       <Routes>
-        <Route path='/' element={<Home products={productData} />} />
+        <Route path='/' element={<Home products={productData} onAddToCart={handleAddToCart} />} />
         <Route path='products' element={<Products products={productData} onAddToCart={handleAddToCart} />}>
           <Route path='all-animals' element={<AllAnimals products={productData} onAddToCart={handleAddToCart} />} />
           <Route path='big-cats' element={<BigCats products={productData} onAddToCart={handleAddToCart} />} />
@@ -104,6 +105,7 @@ function App() {
             handleRemoveFromCart={handleRemoveFromCart}
             handleEmptyCart={handleEmptyCart}
           />} />
+        <Route path='checkout' element={<Checkout cart={cart} />} />
       </Routes>
     </div >
   );
