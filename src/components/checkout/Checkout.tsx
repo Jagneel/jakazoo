@@ -8,16 +8,65 @@ import { commerce } from '../../lib/commerce'
 
 const steps = ['Shipping address', 'Payment details'];
 
+
+interface ICheckoutToken {
+    id: string;
+    line_items: {
+        product_name: string;
+        quantity: number;
+        line_total: {
+            formatted_with_symbol: string;
+        };
+    }[]
+    total: {
+        formatted_with_symbol: string;
+    }
+}
+
+export interface IShippingData {
+    firstName?: string;
+    lastName?: string;
+    email?: string;
+    address?: string;
+    city?: string;
+    zip?: string;
+    shippingCountry?: string;
+    shippingOption?: {
+        id: string;
+        description: string;
+        price: {
+            formatted_with_symbol: string;
+        }
+    }
+    shippingSubdivision?: string;
+
+}
+
+const defaultCheckoutToken: ICheckoutToken = {
+    id: '',
+    line_items: [{
+        product_name: '',
+        quantity: 0,
+        line_total: {
+            formatted_with_symbol: ''
+        }
+    }],
+    total: {
+        formatted_with_symbol: ''
+    }
+}
+
 export default function Checkout(props: propsCheckout) {
     const [activeStep, setActiveStep] = useState(0);
-    const [checkoutToken, setCheckoutToken] = useState({ id: '' });
+    const [checkoutToken, setCheckoutToken] = useState<ICheckoutToken>(defaultCheckoutToken);
+
     const [shippingData, setShippingData] = useState({})
+
 
     useEffect(() => {
         const generateToken = async () => {
             try {
                 const token = await commerce.checkout.generateToken(props.cart.id, { type: 'cart' });
-                console.log(token)
                 setCheckoutToken(token);
             } catch (error) {
             }
@@ -28,16 +77,23 @@ export default function Checkout(props: propsCheckout) {
     const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1)
     const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1)
 
-    const next = (data: {}) => {
+    const next = (data: any) => {
         setShippingData(data)
 
         nextStep();
     }
 
-
     const Form = () => activeStep === 0
         ? <AddressForm checkoutToken={checkoutToken} next={next} />
-        : <PaymentForm checkoutToken={checkoutToken} />
+        : <PaymentForm
+            shippingData={shippingData}
+            checkoutToken={checkoutToken}
+            backStep={backStep}
+            nextStep={nextStep}
+            onCaptureCheckout={props.onCaptureCheckout} />
+
+
+    console.log(shippingData)
 
     return (
         <>
@@ -63,4 +119,11 @@ interface propsCheckout {
     cart: {
         id: string;
     }
+    order: {};
+    onCaptureCheckout: (checkoutTokenId: any, newOrder: any) => Promise<void>;
+    error: string;
+
 }
+
+
+

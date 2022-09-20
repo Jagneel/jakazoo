@@ -50,31 +50,3 @@ interface navBarProps {
 }
 
 
-
-
-
-{/* <Navbar expand="lg" id="navBar" className={scrolled ? "scrolled" : ''}>
-<a href="/"><h1 id='logo'>Jakazoo</h1></a>
-<Container className='nav-items'>
-    <Navbar.Toggle aria-controls="basic-navbar-nav">
-        <span className='navbar-toggler-icon'></span>
-    </Navbar.Toggle>
-    <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto">
-            <Nav.Link href="/products" className={activeLink === 'allProducts' ? 'active-navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('allProducts')}>Shop</Nav.Link>
-            <Nav.Link href="/#about" className={activeLink === 'about' ? 'active-navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('about')}>About</Nav.Link>
-            <Nav.Link href="#contact" className={activeLink === 'contact' ? 'active-navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('contact')}>Contact</Nav.Link>
-            <div className="nav-cart">
-                <Nav.Link href="/cart" className={activeLink === 'cart' ? 'active-navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('cart')}>Cart</Nav.Link>
-                <span>{props.totalItems}</span>
-            </div>
-        </Nav>
-        {/* <span className="navbar-text">
-            <div className="social-icon">
-                <a href='#'><img src={navIcon2} alt='navicon2' /> </a>
-                <a href='#'><img src={navIcon3} alt='navicon3' /></a>
-            </div>
-        </span> 
-    </Navbar.Collapse >
-</Container >
-</Navbar > * /}*/}

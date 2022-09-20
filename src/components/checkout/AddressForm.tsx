@@ -25,9 +25,6 @@ export default function AddressForm(props: propsAddressForm) {
         id: sO.id, label: `${sO.description} - ${sO.price.formatted_with_symbol}`
     }))
 
-    console.log(shippingOptions)
-
-
     const fetchShippingCountries = async (checkoutTokenId: string) => {
         const { countries } = await commerce.services.localeListShippingCountries(checkoutTokenId);
         setShippingCountries(countries);
@@ -66,9 +63,9 @@ export default function AddressForm(props: propsAddressForm) {
                     <Grid container spacing={3}>
                         <FormInput name='firstName' label='First name' />
                         <FormInput name='lastName' label='Last name' />
-                        <FormInput name='address1' label='Address' />
+                        <FormInput name='address' label='Address' />
                         <FormInput name='email' label='Email' />
-                        <FormInput name='City' label='City' />
+                        <FormInput name='city' label='City' />
                         <FormInput name='zip' label='ZIP / Postal Code' />
                         <Grid item xs={12} sm={6}>
                             <InputLabel>Shipping Country</InputLabel>
@@ -116,16 +113,7 @@ interface propsAddressForm {
     checkoutToken: {
         id: string;
     }
-    next: (data: {}) => void
+    next: (data: any) => void
 }
 
 
-// firstName: string;
-//         lastName: string;
-//         address: string;
-//         email: string;
-//         city: string;
-//         zip: string;
-//         shippingCountry: string;
-//         shippingSubdivision: string;
-//         shippingOption: string;

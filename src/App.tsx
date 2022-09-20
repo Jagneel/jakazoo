@@ -34,6 +34,8 @@ interface cart {
 }
 
 function App() {
+  const [order, setOrder] = useState({});
+  const [errorMessage, setErrorMessage] = useState('');
   const [cart, setCart] = useState<cart>({
     id: '',
     total_items: 0,
@@ -61,7 +63,6 @@ function App() {
 
   useEffect(() => {
     fetchCart();
-    console.log(cart)
   }, [])
 
   const handleAddToCart = async (productId: string, quantity: number) => {
@@ -87,6 +88,23 @@ function App() {
     setCart(item)
   }
 
+  const refreshCart = async () => {
+    const newCart = await commerce.cart.refresh();
+
+    setCart(newCart);
+  }
+
+  const handleCaptureCheckout = async (checkoutTokenId: any, newOrder: any) => {
+    try {
+      const incomingOrder = await commerce.checkout.capture(checkoutTokenId, newOrder)
+
+      setOrder(incomingOrder)
+      refreshCart()
+    } catch (error) {
+      setErrorMessage(error.data.error.message);
+    }
+  }
+
   return (
     <div className='App'>
       <NavBar totalItems={cart.total_items} />
@@ -105,7 +123,12 @@ function App() {
             handleRemoveFromCart={handleRemoveFromCart}
             handleEmptyCart={handleEmptyCart}
           />} />
-        <Route path='checkout' element={<Checkout cart={cart} />} />
+        <Route path='checkout' element={<Checkout
+          cart={cart}
+          order={order}
+          onCaptureCheckout={handleCaptureCheckout}
+          error={errorMessage}
+        />} />
       </Routes>
     </div >
   );
