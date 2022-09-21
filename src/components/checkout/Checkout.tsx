@@ -5,6 +5,7 @@ import Confirmation from './Confirmation';
 import PaymentForm from './PaymentForm';
 import { Paper, Typography, StepLabel, Stepper, Step } from '@material-ui/core';
 import { commerce } from '../../lib/commerce'
+import './checkout.css';
 
 const steps = ['Shipping address', 'Payment details'];
 
@@ -98,7 +99,7 @@ export default function Checkout(props: propsCheckout) {
     return (
         <>
             <div className='toolbar' />
-            <Container>
+            <Container className='checkout-main'>
                 <Paper>
                     <Typography variant='h4' align='center'>Checkout</Typography>
                     <Stepper activeStep={activeStep} alternativeLabel>

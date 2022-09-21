@@ -101,7 +101,7 @@ function App() {
       setOrder(incomingOrder)
       refreshCart()
     } catch (error) {
-      setErrorMessage(error.data.error.message);
+      console.log(error);
     }
   }
 

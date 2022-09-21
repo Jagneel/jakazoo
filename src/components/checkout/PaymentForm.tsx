@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { MouseEvent } from 'react'
 import { Typography, Button, Divider } from '@material-ui/core';
 import { Elements, CardElement, ElementsConsumer } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js'
@@ -12,7 +12,7 @@ const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY!)
 
 export default function PaymentForm(props: propsPaymentForm) {
 
-    const handleSubmit = async (event: MouseEvent, elements: any, stripe: any) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>, elements: any, stripe: any) => {
         event.preventDefault();
 
         if (!stripe || !elements) return;
@@ -58,7 +58,7 @@ export default function PaymentForm(props: propsPaymentForm) {
             <Elements stripe={stripePromise}>
                 <ElementsConsumer>
                     {({ elements, stripe }) => (
-                        <form >
+                        <form onSubmit={(e) => handleSubmit(e, elements, stripe)}>
                             <CardElement />
                             <br /><br />
                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
